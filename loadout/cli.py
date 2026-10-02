@@ -40,8 +40,8 @@ def main(argv=None):
         armory = Armory(build_catalog(), player_level=10)
         armory.presets["empty"] = {}
         armory.equipped["weapon"] = "sword"
-        armory.apply("empty")
         added, removed, changed = armory.diff("empty")
+        armory.apply("empty")
         print("removed=%d equipped=%d" % (len(removed), len(armory.equipped)))
     elif args.sample == "slot":
         armory = Armory(build_catalog(), player_level=10)
